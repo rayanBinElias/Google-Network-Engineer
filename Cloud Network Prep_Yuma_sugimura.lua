@@ -116,4 +116,7 @@ Cloud Interconnect
     4. Test the connection
     5. Create VLAN attachments
     6. Configure on-premises routers
-    7.Optional: Configure HA VPN over Cloud Interconnect
+    7. Optional: Configure HA VPN over Cloud Interconnect
+
+  Direct Peering / Carrier Peering
+    is a service for connecting to public Google services such as Google Workspace. 
