@@ -691,7 +691,11 @@ Packet Mirroring: A network feature in Google Cloud used to diagnose traffic iss
 
 VPC Flow Logs: A feature that records a sample of network flows sent from and received by VM instances, providing visibility into network traffic and helping with network monitoring, forensics, and security.
 
-50.
+50. Cloud Armor: A security service that provides DDoS defense and application-aware protection to safeguard web applications from multi-vector cyber attacks, abuse, and other threats.
+
+GKE Ingress: Manages external access to HTTP(S) services in a cluster, typically via Google-managed Load Balancing, integrating with Cloud Armor for security.
+
+HTTP(S) Load Balancer: A global, fully distributed load balancing solution for HTTP(S) traffic, facilitating capabilities like SSL offloading and Google Cloud Armor integration.
 
 Udemy Set 3
 1.
