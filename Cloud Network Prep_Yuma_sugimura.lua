@@ -107,3 +107,13 @@ VPC Service Controls
   on-premises clients are configured to access Google APIs via "Private Google Access."
     -  use ./domain/.asp restricted.googleapis.comas the domain name for private Google access.private.googleapis.com
     
+
+Cloud Interconnect
+  Dedicated Interconnect Overview process
+    1. Decide if you want MACsec for Cloud Interconnect.
+    2. Order a Dedicated Interconnect connection
+    3. Retrieve LOA-CFAs
+    4. Test the connection
+    5. Create VLAN attachments
+    6. Configure on-premises routers
+    7.Optional: Configure HA VPN over Cloud Interconnect
