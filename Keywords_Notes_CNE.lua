@@ -698,56 +698,379 @@ GKE Ingress: Manages external access to HTTP(S) services in a cluster, typically
 HTTP(S) Load Balancer: A global, fully distributed load balancing solution for HTTP(S) traffic, facilitating capabilities like SSL offloading and Google Cloud Armor integration.
 
 Udemy Set 3
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
-21.
-22.
-23.
-24.
-25.
-26.
-27.
-28.
-29.
-30.
-31.
-32.
-33.
-34.
-35.
-36.
-37.
-38.
-39.
-40.
-41.
-42.
-43
-44.
-45.
-46.
-47.
-48.
-49.
-50.
+1. Cache-Control: This header defines the caching policies of each resource in HTTP. The 'no-store' directive ensures a requested resource is not cached anywhere.
+
+Metadata: Metadata in the context of cloud storage refers to a set of data that describes and gives information about other data of a digital file.
+
+Purge: In CDNs, purging refers to the process of forcibly removing content from the cache before it naturally expires according to the caching policy.
+
+2. Firewall Rule Priority: A numeric value that dictates the precedence of firewall rules; lower numbers imply higher priority, with 0 being the highest. Rules are evaluated in order of priority.
+
+SSH Protocol: Secure Shell (SSH) is a network protocol utilized for secure access, management, and configuration of devices over an unsecured network. Port 22 is the default port for SSH connections.
+
+Ingress: Refers to the traffic entering a network. Ingress firewall rules determine which incoming network traffic is permitted or denied access based on specified parameters.
+
+3. VPC-native cluster: A VPC-native cluster is a GKE cluster that uses Google Cloud's Virtual Private Cloud (VPC) network with alias IP addresses, benefiting from improved network performance and security.
+
+Alias IP ranges: A feature that allows containers within a GKE cluster to have IP addresses from a pool defined by a subnet in a Google Cloud VPC, promoting efficient IP management.
+
+Subnet sizing: The process of defining the IP address range of a network. The size is denoted as a CIDR block (e.g., /24), which affects the total number of IP addresses available.
+
+4. storage.objectViewer: An IAM role in Google Cloud that provides read-only access to objects in a Cloud Storage bucket. It allows service accounts or users to list and get objects without the ability to modify them.
+
+service account: A special type of Google Cloud account that represents a non-human user authorized to interact with specific services and resources, usually within automated workflow operations.
+
+least privilege principle: A security concept that individuals or services be granted the minimal level of access – or permissions – necessary to perform their tasks.
+
+5. HA VPN: High Availability VPN provides a secure connection between your Google Cloud network and your on-premises side. It's designed for 99.99% service availability.
+
+MED (Multi-Exit Discriminator): MED is a BGP attribute used to convey the preferred path for traffic to exit an AS when multiple paths are available.
+
+0.0.0.0/0 route: A default route that matches all IP addresses. In networking, this is used to define the gateway of last resort to a networking firewall/router where packet has no other match.
+
+Custom routes: These are user defined routing rules in Google Cloud to manage traffic going in and out of their network.
+
+Priority: Routing priority determines which route should be used for packet forwarding. Lower values have higher priority.
+
+Reserved virtual IP addresses: A set of IP addresses that are kept for private access within a network and are not reachable over the public internet.
+
+Default internet gateway: The access point via which VM instances without external IP addresses can access the internet indirectly.
+
+6. Interconnect: Google Cloud's Interconnect service provides a secure, high bandwidth connection between on-premises networks and Google Cloud, bypassing the public internet.
+
+VPC Service Controls: This is a security perimeter that safeguards Google Cloud resources by ensuring only authorized services and identities can access them, limiting data exfiltration risks.
+
+DNS A and CNAME Records: DNS A records map a domain name to an IP address, while CNAME records redirect requests from one domain to another, typically used together for service resolution.
+
+Restricted.googleapis.com: A private Google domain used when configuring private Google access with VPC Service Controls, providing a secure endpoint for accessing Google APIs.
+
+7. Custom Role: A user-defined set of permissions that can be attached to IAM principals. Custom roles provide granular access control beyond predefined roles.
+
+Predefined Role: A role created by Google Cloud that provides a set of related permissions. Users can replicate predefined roles to create custom roles with modifications.
+
+gcloud CLI: A command-line interface tool for managing Google Cloud resources and services, which is commonly used for scripting and automation.
+
+INVALID_ARGUMENT Error: An error code indicating that the user has provided an incorrect argument or configuration that the system cannot process.
+
+8. Internal TCP/UDP Load Balancer: A regional load balancer that distributes traffic among VM instances in the same region. It supports both TCP and UDP traffic and is used for splitting internal traffic evenly.
+
+BGP Routing: Border Gateway Protocol is used for routing traffic between the internet and a private network. In hybrid-cloud scenarios, BGP helps in managing the traffic flows efficiently.
+
+High Availability: Refers to systems designed to be operational continuously without failure for a long period. Achieving high availability often involves redundancy across components.
+
+Fault Tolerance: The capability of a system to continue functioning even after the failure of one or more components. In networking, this often involves redundant paths and automatic failover processes.
+
+9. Custom Routes: Custom routes in Google Cloud VPC networks are user-defined routing rules that specify how traffic should be directed within the VPC, deviating from the default routes provided by Google.
+
+Network Tags: Network tags are identifiers assigned to VM instances used to apply firewall rules and routing policies. These are essential in controlling flow of traffic based on the tags assigned.
+
+Specificity in Routing: In networking, specificity refers to the precision of a route's definition. A more specific route will have a smaller range of targeted IP addresses, thereby gaining higher priority over broader routes.
+
+10. Internal DNS: A service that translates domain names to IP addresses within a private network. This mechanism is crucial for VPC-operated resources to communicate with each other by using human-readable domain names.
+
+Instance Hostname: A unique DNS name automatically assigned to a Compute Engine instance within the internal DNS, used for inter-instance communication within the same VPC.
+
+VPC: A virtual network dedicated to a Google Cloud customer's services, providing control over networking environments, including private IP address ranges, subnets, network gateways, and more.
+
+11. Master Authorized Networks: A security feature in GKE that restricts which IP ranges are allowed to access the control plane. Configuring this properly secures the cluster while providing necessary access for management operations.
+
+kubectl: A command-line tool that interacts with the Kubernetes API to manage applications on Kubernetes and inspect cluster resources, necessary for operational tasks like viewing pods.
+
+Private Cluster: A type of Google Kubernetes Engine (GKE) cluster configured to have its nodes and optionally the control plane assigned private IP addresses only, enhancing security by not exposing them to the public internet.
+
+12. VPC-native: VPC-native mode in GKE is an approach for cluster creation that leverages Google Cloud’s Virtual Private Cloud for pod networking, offering better network performance and management.
+
+privateEndpoint: In a GKE cluster, the privateEndpoint option enables the control plane to run on an internal IP address, isolated from public internet access, enhancing security posture.
+
+master authorized networks: A security feature in GKE that restricts access to the control plane by enabling only specified IP ranges (authorized networks) to connect.
+
+network proxy: Used within a GKE environment, this refers to a proxy server that intermediates communication between the cluster's control plane and clients located within a protected corporate network.
+
+13. Global VPC routing: Global VPC routing allows for network traffic to be routed across different regions without the need for additional VPNs, reducing latency and potential costs associated with inter-region data transfer.
+
+Cloud Interconnect VLAN attachment: A Virtual Local Area Network (VLAN) attachment on Cloud Interconnect provides a private connection between your on-premises network and your VPC, which can enhance security and reduce latency.
+
+Cloud Router: Cloud Router works with VLAN attachments to dynamically exchange routes between your Google Cloud VPC and on-premises networks via BGP, enabling automatic learning of subnets and facilitating network management.
+
+High Availability: Refers to systems designed to be operational without interruptions for a long period of time, often structured to withstand or quickly recover from failures.
+
+14. Firewall Policy: Firewall Policies in GCP allow for implementing access control rules across the entire organization or certain resources, providing consistent firewall rules enforcement.
+
+Hierarchical Resource Organization: This involves organizing resources in GCP so that they inherit policies and configurations from higher levels (organization > folder > project > resource).
+
+Traffic Filtering: The process of controlling the flow of data to and from network interfaces based on predetermined access control lists or rules.
+
+15. BIND (Berkeley Internet Name Domain): BIND is the most widely used Domain Name System (DNS) software on the Internet. It's responsible for translating domain names into IP addresses.
+
+Zone file: A DNS zone file is a text file that describes a DNS zone. It includes directives and resource records, and it's structured in an BIND format.
+
+gcloud dns record-sets import: This is a command within the gcloud CLI used for importing DNS records from a zone file into Google Cloud DNS.
+
+'--zone-file-format: A flag used with 'gcloud dns record-sets import' specifying that the import is using a BIND zone file format.
+
+16. Private Forwarding Zone: A type of DNS zone in Google Cloud's Cloud DNS that forwards DNS queries for a particular domain to an alternative DNS server, typically for cross-network DNS resolution.
+
+Cloud Router: A component within Google Cloud that helps manage dynamic routing and next-hop scalability across VPNs and interconnects by propagating learned routes of a VPC network.
+
+HA VPN: High-availability VPN provides a secure and reliable connection between your Google Cloud network and your on-premises or other cloud network infrastructure.
+
+Multi-cloud Architecture: An approach that involves using cloud services from more than one cloud provider, enabling increased flexibility and mitigation of vendor lock-in risks.
+
+17. HA VPN: High Availability (HA) VPN provides a secure and resilient connection between your Google Cloud VPC and external networks.
+
+VPC: A Virtual Private Cloud (VPC) allows you to manage a network space within Google Cloud, providing isolation and security for your resources.
+
+Resource Manager Constraints: Resource Manager Constraints are policies that allow cloud administrators to define granular, hierarchical rules for resource configurations across the Google Cloud Platform.
+
+Allowlist: An allowlist is a list of permitted entities, such as IP addresses, that are granted access or privileges within a network or system.
+
+18. VPC Subnet: A range of IP addresses in your virtual private cloud (VPC) network. Subnets allow you to segment your network and are regional resources.
+
+Route broadcasting: The process of propagating the route information throughout an entire network allowing for the determination of paths for traffic to take.
+
+IP address overlap: Occurs when two different networks have ranges that cover the same IP addresses, leading to issues in routing and connectivity.
+
+Specificity in routing: In networking, more specific routes (with longer subnet masks) are prioritized over less specific routes when determining the path of network traffic.
+
+19. Cloud VPN: Enables secure connection between on-premises network and Google Cloud network through IPsec VPN tunnels.
+
+Persistent route: A route that remains active across network reboots and ensures continuous, targeted path for traffic.
+
+Route-based VPN: A VPN configuration that uses an IPsec tunnel interface as the anchor point for routing decisions. Routings are based on destination IP ranges.
+
+gcloud command: A command-line tool for managing resources on Google Cloud, enabling automation of tasks through scripting.
+
+20. Partner Interconnect: A service that allows organizations to connect their on-premises data centers to Google Cloud with high-bandwidth, enterprise-grade connections provided by Google's service provider partners.
+
+Network Intelligence Center: A comprehensive network monitoring, verification, and optimization platform within Google Cloud. It includes various tools to diagnose and visualize network health.
+
+Connectivity Tests: A feature within the Network Intelligence Center that allows users to create and run network connectivity tests for Google Cloud resources.
+
+Firewall Rules: Security filters that control inbound and outbound network traffic to and from resources in a Google Cloud VPC. They are vital for defining the security perimeter of the network.
+
+Routing: The process of moving packets across a network from one host or network segment to another, often decided by routing tables and policies.
+
+VPC Flow Logs: A feature that enables logging of network flows sent from and received by VM instances in a Google Cloud VPC. These logs provide visibility into network traffic for security and monitoring.
+
+21. CIDR: Classless Inter-Domain Routing (CIDR) denotes the allocation of IP addresses and IP routing. CIDR notation reflects network prefix size and the number of available addresses.
+
+Primary/Secondary IP Range: In GKE, primary IP ranges are allocated for nodes, and secondary IP ranges are for services and pods. This separation allows efficient scaling and network organization.
+
+Pod Density: Pod density refers to the number of pods that can run on a single node. It's configured to ensure appropriate resources and network allocation for each pod.
+
+22. Partner Interconnect: A Google Cloud service that allows customers to connect to Google via a supported service provider. It's a scalable, high-speed, and enterprise-grade connection option.
+
+VPC Network: A Virtual Private Cloud (VPC) provides a private network in the cloud with its own global firewall rules, routes, and subnets for VM instances.
+
+Host Project: The central administrative project in a shared VPC setup. It manages common resources, allowing associated service projects to access these resources while keeping permission control centralized.
+
+Shared VPC: A Google Cloud network architecture that allows an organization to share network resources, like subnets and routes, across multiple projects within the same organization.
+
+Cloud Router: A fully distributed and managed Google Cloud service that dynamically exchanges network routes between VPC and on-premises networks by using BGP protocol.
+
+23. Cloud NAT: A fully managed service by Google Cloud that provides a method for Google Cloud VM instances without external IP addresses to connect to the internet or other Google services in a controlled and efficient manner.
+
+IP Forwarding: A technique commonly used in virtual machines that allows an instance to receive a packet intended for a different destination and then forward it to said destination.
+
+iptables: A user-space utility program that allows a system administrator to configure the IP packet filter rules of the Linux kernel firewall, implemented as different Netfilter modules.
+
+24. Private Cluster: A GKE private cluster ensures that the control plane or master is not accessible from the public internet, increasing security for sensitive applications.
+
+Private Endpoint: A network interface that keeps traffic within the Google Cloud network, used here to prevent public internet access to the GKE control plane.
+
+VPC Peering: A networking connection between two VPCs that allows VM instances to communicate internally without using public IPs.
+
+Custom Route Advertisements: Advanced networking feature within VPCs which allows for the manual configuration of network routes to control traffic flow.
+
+Authorized Networks: Security feature that restricts access to specific IP ranges, adding a layer of access control to resources, such as GKE control plane.
+
+25. Target Pool: A 'Target Pool' allows users to create a group of VM instances within the same region that will receive incoming traffic from forwarding rules associated with a network load balancer.
+
+Network Load Balancer: Google Cloud's Network Load Balancer is a non-proxied load balancer that operates at the fourth layer of the OSI model (Transport Layer), directing traffic based on incoming IP protocol data.
+
+Managed Instance Group: Managed Instance Groups provide automatic scaling, updates, and management for collections of identical VM instances, typically used for stateless applications with uniform configuration.
+
+Equal Cost Multipath (ECMP): ECMP allows for the distribution of traffic across multiple network paths with equal cost metrics, thereby increasing bandwidth and providing redundancy.
+
+26. Dedicated Interconnect: A Dedicated Interconnect provides a direct physical connection between an organization's on-premises network and Google's network.
+
+VLAN Attachment: A VLAN attachment, also known as an interconnect attachment, is a logical connection between the Dedicated Interconnect and a Google Cloud VPC network.
+
+Multi-exit discriminator (MED): In BGP routing, MED is an optional non-transitive attribute that is used to convey to external neighbors a preference for an entry point into the local AS.
+
+27. roles/compute.networkViewer: An IAM role in Google Cloud that grants permissions to view network-related resources without the ability to modify them.
+
+IAM Policies: These are sets of rules that define the permissions granted to users and services, which determine what actions can be performed on Google Cloud resources.
+
+Custom Role: A user-defined set of permissions that can be tailored to meet the specific needs of an organization, contrary to predefined roles that come with a fixed set of permissions.
+
+compute.firewalls.get: A permission that allows the retrieval of information about firewall rules within the Google Cloud network configurations.
+
+compute.subnetworks.*: A wildcard permission that broadly grants all actions related to subnetwork resources within Google Cloud's VPC networks.
+
+compute.subnetworks.useExternalIp: A permission that enables users to assign external IP addresses to subnetwork resources, which goes beyond mere viewing privileges.
+
+28. VPC Service Controls: An advanced security feature that allows you to define a security perimeter around Google Cloud resources to control communication to and from services within the perimeter.
+
+Access Context Policy: Part of the VPC Service Controls that specifies access levels based on attributes like user identity, IP address, and the state of device security.
+
+29. VPC Flow Logs: VPC Flow Logs is a feature that allows you to capture information about the IP traffic going to and from network interfaces in your VPC. This data is useful for network monitoring, forensics, real-time security analysis, and expense optimization.
+
+src_ip: The 'src_ip' attribute in VPC Flow Logs denotes the source IP address involved in the network flow. Identifying this can help trace the source of excessive traffic or potential security threats.
+
+30. Global VPC: A Virtual Private Cloud (VPC) that spans multiple regions without requiring regional replication. Used to enable global networking resources for an organization.
+
+RFC 1918: A standard defining a set of IP address ranges to be used for private networks. They are not routed on the internet, reducing the chance of IP address conflict.
+
+Public IP Address Range: A set of IP addresses that are assignable to devices and are routable on the internet. Unlike RFC 1918 addresses, they are globally unique.
+
+31. Partner Interconnect: A scaled version of Dedicated Interconnect for enterprises that offers connectivity between on-premises networks and Google Cloud through a supported service provider, it's cost-effective for lower bandwidth needs.
+
+RFC 1918: Addresses reserved for private networks, allowing organizations to use them without coordination with the Internet Assigned Numbers Authority, often used in combination with NAT.
+
+Symmetrical Bandwidth: Describes a network connection where the upload and download speeds are equal, critical for consistent data transfer rates during synchronization operations.
+
+Latency: A measure of time delay experienced in a system, critical for real-time data processing. High latency reduces the effective throughput over a network connection.
+
+Throughput: The rate at which data is successfully transferred over a connection. It's an essential measure when determining the bandwidth required for data-intensive applications.
+
+Equal-Cost Multi-Path (ECMP) Routing: A strategy in computer networking which allows for the use of multiple paths of equal cost, used to expand connectivity and redundancy but adds complexity.
+
+32. compute.SecurityAdmin: This IAM role grants permissions to create, modify, and delete firewall rules and SSL certificates, offering administrative control over these security features.
+
+logging.viewer: This role permits users to view logs in Google Cloud, which is essential for monitoring and forensic purposes but does not allow making changes to log buckets or exporting logs.
+
+Priority: A number associated with a firewall rule that determines its precedence, with lower numbers indicating higher priority. This is important when multiple rules could potentially match a network packet.
+
+33. Shared VPC: An advanced Google Cloud networking resource, allowing for resource sharing across projects within the same organization, vital for conserving IP space and simplifying network management.
+
+DNS Forwarding: A DNS feature where queries are redirected from one server to another, useful for resolving names in a separate DNS domain without affecting the local DNS server configuration.
+
+Zone Transfer: A DNS function that replicates DNS records from a primary DNS server to a secondary, ensuring that separate DNS zones maintain consistent records and facilitating domain management.
+
+Cloud VPN: A secure and scalable solution to link VPCs across different Google Cloud organizations, offering a cost-effective alternative to physical links for extending networks.
+
+Cloud Router: Works with Cloud VPN to dynamically exchange routes between connected networks, enabling automatic updates and network scalability.
+
+34. Cloud Armor: A security service that provides DDOS protection and traffic filtration for applications running on Google Cloud. It supports policy configuration in preview mode to evaluate rules without enforcing them.
+
+Preview Mode: A feature in security policy configuration which allows you to evaluate the impact of a rule by testing it in a non-enforcing manner. Logs are generated for analysis without affecting the actual traffic flow.
+
+35. DNS Forwarding: A technique used to pass DNS queries to another server for resolution. It enables central management of DNS queries and can be used to respect organizational boundaries and security policies.
+
+Inbound Policy: Refers to the rules or configurations set for incoming network traffic. In the context of DNS, it dictates how the DNS resolvers handle incoming domain resolution requests from external sources.
+
+.internal Domains: Reserved top-level domain used within private networks or cloud services for internal name resolution. This domain is not resolvable on the public internet and is managed by internal DNS servers.
+
+36. Policy-based VPN: A VPN that makes forwarding decisions based on policies defined by identities, often including combinations of prefixes from both participating networks.
+
+IKEv2: Internet Key Exchange version 2, a protocol used for setting up a security association in the IPsec protocol suite, providing strong security features.
+
+Traffic Selectors: Define the IP address ranges that the VPN gateway is authorized to route for VPN tunnels. They are essential in policy-based VPNs.
+
+Static Routes: Manually configured network routes, typically used when the routing environment is stable and changes infrequently.
+
+37. Cloud NAT: A service in Google Cloud that allows instances without external IP addresses to connect to the internet in a controlled and efficient way, while not allowing incoming connections initiated by the external hosts.
+
+VPN Tunnel: A secure connection between the on-premises network and the VPC allowing private access to resources and routing of traffic through the data center network.
+
+Custom Static Route: A user-defined network path used to control the traffic flow within a VPC, enabling specification of next hops for certain traffic patterns.
+
+Instance Tag: Tags applied to Compute Engine instances that can be used to apply network firewall rules and are also useful in routing decisions.
+
+Route Priority: A parameter that determines the order of routing rules applied in a network. Lower priority values indicate higher precedence.
+
+38. Firewall Rules: In Google Cloud, firewall rules control the traffic to and from instances. They can specify protocols, ports, and source/destination ranges that are allowed or denied.
+
+Health Checks: Health checks in Google Cloud verify the responsiveness of Compute Engine instances. They ensure only healthy instances are used by services like load balancers.
+
+Source Ranges: This specifies the range of IP addresses that are allowed or denied by a firewall rule to access a resource in the network.
+
+Ingress: Ingress refers to incoming network traffic to a Google Cloud resource. Firewall rules for ingress control the allowed incoming connections to the instance from other networks.
+
+39. VPC-native: A VPC-native cluster is one that uses the VPC's routing table for pod networking. It is integrated with Google Cloud VPC and provides better performance and security.
+
+CIDR: Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses and routing. The notation defines both the address and the length of the subnet mask.
+
+Pod IP Addressing: In Kubernetes, each pod is assigned a unique IP address within the cluster, enabling direct pod-to-pod communication.
+
+Subnet Mask: The subnet mask determines the network portion of an IP address. A /24 mask implies 256 available addresses (254 for hosts), accommodating the cluster's pod IP requirements.
+
+40. VPC Service Controls: A Google Cloud security tool that helps mitigate data exfiltration risks by creating perimeters around resources to guard against unintended accesses and transfers.
+
+Service Perimeter: A virtual boundary that provides an additional layer of protection to resources and services that might be sensitive or regulated, by defining groups of resources that can communicate with each other.
+
+Restricted Service: A configuration within VPC Service Controls to limit the use of specific Google Cloud services to within a defined service perimeter to enhance security.
+
+41. VPC Peering: VPC Peering allows networking connections between VPC networks which enables the routing of traffic. It's used when resources in different VPCs need to communicate privately and securely.
+
+Network Segmentation: Network Segmentation is the practice of splitting a computer network into subnetworks, each being a network segment. Enhances security and performance by controlling flow of traffic.
+
+Shared VPC: A network resource management paradigm where one host project's network resources are shared with other service projects, providing centralized management while enabling separation of workloads.
+
+Cloud VPN: Cloud VPN securely connects your on-premises network to your Google Cloud VPC network through an IPsec VPN connection. Traffic traveling between the two networks is encrypted by one VPN gateway and decrypted by the other.
+
+42. External HTTP(S) Load Balancing: Manages HTTP and HTTPS traffic, distributing loads across multiple instances, regions, or servers for high availability and low latency. Supports URL-based routing and X-Forwarded-For headers.
+
+URL Maps: A component of Google Cloud Load Balancers that directs HTTP(S) requests to specified backend services based on the hostname and path in the URL.
+
+X-Forwarded-For: An HTTP header field that identifies the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer.
+
+Autoscaling: A feature enabling Cloud services to automatically adjust resources based on the current demand to balance performance and operational cost.
+
+Latency: The time delay between a client's request and the server's response. Lowering latency is crucial for a better user experience, especially in streaming services.
+
+High Availability: Refers to a system's ability to remain accessible and operational for a desired percentage of time, minimizing downtimes and ensuring reliability.
+
+Route-Based Decisions: Routing decisions made by examining request attributes (e.g., URL path) to direct traffic to the appropriate backend service or location.
+
+43. Shared VPC: A shared VPC allows an organization to connect resources from multiple projects to a common VPC network, enabling resource sharing while isolating project administration.
+
+Service Projects: Projects connected to a host project's shared VPC network that can use subnets from the host project, allowing for segmented network access and resource allocation.
+
+Firewall Rules: Security rules that control the traffic allowed to and from instances across your VPC network by defining a set of rules that filter traffic based on IP addresses, ports, and protocols.
+
+44. Google Cloud Armor: A managed security service that provides defense against multiple layers of network attacks, DDoS attacks, and application-level attacks such as cross-site scripting (XSS) and SQL injection.
+
+Network Endpoint Group (NEG): A Google Cloud feature allowing you to specify a group of backend endpoints for routing traffic, which can be either Google Cloud services or internet services not hosted on Google Cloud.
+
+External HTTP(S) Load Balancer: A globally distributed Google Cloud Load Balancing solution for HTTP/HTTPS traffic, intelligent routing, and scalable to millions of requests per second.
+
+45. Monitoring Query Language (MQL): An advanced query language for Google Cloud's Monitoring service, allowing users to create complex queries to retrieve, visualize, and alert on the metrics data.
+
+Custom Alerts: User-defined notifications in Google Cloud's Monitoring service that trigger based on specific metric conditions, enabling proactive incident management.
+
+Bandwidth Utilization: A measure of the amount of data transmitted through a network connection over time. Monitoring this helps in ensuring performance and mitigating congestion.
+
+46. Private Google Access: Allows resources with no external IP addresses on a subnet to reach Google services without requiring a public IP, effectively enabling communication with Google APIs and services over Google's internal network.
+
+Cloud NAT: A Google Cloud feature that allows instances without public IP addresses to connect to the internet or other Google services in a controlled and efficient manner, while keeping them private.
+
+47. Service Account: An identity that applications or virtual machines can assume to interact with Google services securely, following the principle of least privilege.
+
+Firewall Rules: A set of constraints that specify which type of network traffic is allowed or denied to and from instances in a VPC, based on factors like IP ranges, tags, and service accounts.
+
+VPC Network: A virtual network within Google Cloud where you can assign IP addresses, create subnets, configure route tables, and network gateways.
+
+gcloud: The command-line interface for Google Cloud Platform that allows you to create and manage resources, including computing instances and firewall rules.
+
+48. Serverless VPC Access: Enables serverless services like Cloud Run and Cloud Functions to connect to resources in a VPC, providing a managed network bridge between serverless environments and VPC resources.
+
+VPC Peering: A method for connecting two VPCs so that they can share network resources privately without using external IP addresses, while keeping the traffic within the Google Cloud network.
+
+Cost-efficiency: The practice of minimizing expenses while maintaining the functionality and performance required by the cloud solution.
+
+49. bigquery.dataOwner: This predefined IAM role grants full control over datasets, including creating, updating, and deleting datasets and tables within them, suitable for those managing data resources.
+
+roles/owner: This broad, project-wide role grants an extensive set of permissions that extend beyond managing BigQuery resources, potentially violating the principle of least privilege.
+
+Principle of Least Privilege: A security best practice that dictates providing the minimum level of access necessary to perform job functions, minimizing potential security risks.
+
+50. Shared VPC: Allows an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC), enabling centralized management and control over networking resources.
+
+Service Projects: These are separate Google Cloud projects that connect to a host project's Shared VPC, allowing them to share the host project's network resources.
+
+Centralized Management: A method of controlling and maintaining network policies and configurations from a single administrative point, streamlining network operations and governance.
 
 Template
 1.
